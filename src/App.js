@@ -12,7 +12,7 @@ function App() {
     if (fetching || (document.body.offsetHeight < window.innerHeight)) {
       console.log("fetching");
       fetch(
-        `https://yts.mx/api/v2/list_movies.json?page=${currentPage}`
+        `https://yts.mx/api/v2/list_movies.json?limit=50&page=${currentPage}`
       )
         .then((resp) => resp.json())
         .then((json) => {
