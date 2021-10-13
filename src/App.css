@@ -1,38 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .App {
+  font-family: arial, sans-serif;
+  margin: 15px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table {
+  width: 100%;
+  border-top:  1px solid #dddddd;
+  border-left: 1px solid #dddddd;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.row {
   display: flex;
-  flex-direction: column;
+}
+.row:first-child {
+  font-weight: bold;
+}
+.cell {
+  border-right: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  width: calc(100%/5);
+}
+
+.row:nth-child(even) {
+  background-color: #eeeeee;
+}
+.myInput {
+  width: 100%;
+  padding: 5px 15px;
+  margin: 5px 0;
+  border: 1px solid teal;
+}
+.myBtn {
+  padding: 5px 15px;
+  margin: 5px;
+  color: teal;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+.commentItem {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+.commentBody {
+  word-break: break-all;
+}
+.myModal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  background: rgba(0,0,0, 0.5);
+}
+.myModalContent::-webkit-scrollbar {
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  /* background-clip: padding-box; */
+}
+.myModalContent::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #ddd;
+}
+.myModalContent {
+  padding: 25px;
+  margin: 15px;
+  background: white;
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 600px;
+  overflow-y: auto;
+  max-height: 95%;
+}
+
+.myModal.active {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }
